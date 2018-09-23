@@ -1,0 +1,18 @@
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+ name: springboot-helloworld
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: spboothelloworld 
+    spec:
+      containers:
+      - name: k8sspboot-helloworld
+        image: naveenkrishiv/spboothelloworld
+        ports:
+        - name: spboot-port
+          containerPort: 8080
